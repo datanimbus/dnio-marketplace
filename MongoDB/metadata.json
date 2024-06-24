@@ -1,4 +1,8 @@
 {
-	"connector": ,
-	"nodes": []
+	"connector": "connector.json",
+	"nodes": [
+		"node.findOne.json",
+		"node.insertMany.json",
+		"node.insertOne.json"
+	]
 }
