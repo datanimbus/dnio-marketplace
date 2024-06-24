@@ -18,5 +18,10 @@ module.exports = async (connectorData, inputData) => {
 		return result;
 	} catch (error) {
 		logger.error(`MongoDB InsertMany Node: Error inserting to MongoDB: ${error}`);
+		throw {
+			"code": "MONGODB_INSERT_MANY_ERROR",
+			"message": "Error inserting multiple documents into MongoDB",
+			"stackTrace": error
+		}
 	}
 }

@@ -14,5 +14,10 @@ module.exports = async (connectorData) => {
 		return { client, db };
 	} catch (error) {
 		logger.error(`MongoDB Connector: Error connecting to MongoDB: ${error}`);
+		throw {
+			"code": "MONGODB_CONNECTOR_ERROR",
+			"message": "Error connecting to MongoDB",
+			"stackTrace": error
+		}
 	}
 }

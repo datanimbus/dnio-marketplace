@@ -10,5 +10,10 @@ module.exports = async (connectorData, inputData) => {
 		return { insertedId: result.insertedId };
 	} catch (error) {
 		logger.error(`MongoDB InsertOne Node: Error inserting to MongoDB: ${error}`);
+		throw {
+			"code": "MONGODB_INSERT_ONE_ERROR",
+			"message": "Error inserting to MongoDB",
+			"stackTrace": error
+		}
 	}
 }
