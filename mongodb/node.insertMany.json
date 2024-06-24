@@ -1,0 +1,39 @@
+{
+	"name": "MongoDB Insert Many",
+	"fileName": "node.insertMany.js",
+	"inputSchema": [
+		{
+			"key": "data",
+			"type": "Schema"
+		},
+		{
+			"key": "collection",
+			"type": "String"
+		}
+	],
+	"outputSchema": [
+		{
+			"key": "insertedCount",
+			"type": "Number"
+		},
+		{
+			"key": "insertedIds",
+			"type": "Array",
+			"subType": "String"
+		}
+	],
+	"errorSchema": [
+		{
+			"key": "code",
+			"type": "Number"
+		},
+		{
+			"key": "message",
+			"type": "String"
+		},
+		{
+			"key": "stackTrace",
+			"type": "String"
+		}
+	],
+},

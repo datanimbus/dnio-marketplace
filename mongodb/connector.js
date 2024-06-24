@@ -1,18 +1,18 @@
 const { MongoClient } = require('mongodb');
 
 let logger = global.logger;
-let connectorData = null;
 
-async function connect() {
-	logger.trace(`Connecting to MongoDB: ${connectorData.connectionString}`);
-	// const client = await MongoClient.connect(connectorData.connectionString);
-	// const db = client.db(connectorData.database);
-	// return { client, db };
-}
-
-module.exports = async (_connectorData) => {
-	logger.trace("MongoDB Connector called!");
-	connectorData = _connectorData
-	logger.trace(`Connector Data: ${JSON.stringify(connectorData)}`);
-	return await connect();
+module.exports = async (connectorData) => {
+	logger.trace("MongoDB Connector: Invoked!");
+	logger.trace(`MongoDB Connector: Connector Data: ${JSON.stringify(connectorData)}`);
+	logger.trace(`MongoDB Connector: Connecting to MongoDB: ${connectorData.connectionString}`);
+	try {
+		const client = await MongoClient.connect(connectorData.connectionString);
+		logger.info("MongoDB Connector: Connected to MongoDB")
+		const db = client.db(connectorData.database);
+		logger.info(`MongoDB Connector: DB set to ${connectorData.database}`)
+		return { client, db };
+	} catch (error) {
+		logger.error(`MongoDB Connector: Error connecting to MongoDB: ${error}`);
+	}
 }

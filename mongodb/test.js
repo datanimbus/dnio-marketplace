@@ -4,16 +4,45 @@ let logger = getLogger(`[MongoDB]`);
 logger.level = "TRACE"
 global.logger = logger;
 
-logger.trace("Hello, World!");
-
 (async () => {
 	let connectorData = {
-		connectionString: "mongodb://localhost:27017",
-		database: "mydb",
+		connectionString: "mongodb://localhost:30017?directConnection=true",
+		database: "dnio-marketplace",
 		// tls: true,
 		// certName: "ca.pem",
 		// cert: "cert"
-	}
+	};
+	// TODO: test with tls, certName and cert
 
-	require('./connector')(connectorData);
+	connectorData = await require('./connector')(connectorData);
+
+	let inputData = {
+		data: { "name": "Insert One", "gender": "Male" },
+		collection: "test"
+	};
+
+	let output = await require('./node.insertOne')(connectorData, inputData);
+	logger.info(`InsertOne output : ${JSON.stringify(output)}`);
+
+	inputData = {
+		data: [
+			{ "name": "Insert Many 01", "gender": "Male" },
+			{ "name": "Insert Many 02", "gender": "Female" },
+			{ "name": "Insert Many 03", "gender": "Male" },
+		],
+		collection: "test"
+	};
+
+	output = await require('./node.insertMany')(connectorData, inputData);
+	logger.info(`InsertMany output : ${JSON.stringify(output)}`);
+
+	// inputData = {
+	// 	filter: {},
+	// 	project: {},
+	// 	sort: {},
+	// 	limit: 0,
+	// 	offset: 0,
+	// 	collection: "test"
+	// };
+
 })()

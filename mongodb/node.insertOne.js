@@ -1,0 +1,14 @@
+let logger = global.logger;
+
+module.exports = async (connectorData, inputData) => {
+	logger.trace("MongoDB InsertOne Node: Invoked!");
+	try {
+		logger.trace(`MongoDB InsertOne Node: input - ${JSON.stringify(inputData)}`);
+		const result = await connectorData.db.collection(inputData.collection).insertOne(inputData.data);
+		logger.trace(`MongoDB InsertOne Node: Insert successful`);
+		logger.trace(`MongoDB InsertOne Node: Insert response : ${JSON.stringify(result)}`);
+		return { insertedId: result.insertedId };
+	} catch (error) {
+		logger.error(`MongoDB InsertOne Node: Error inserting to MongoDB: ${error}`);
+	}
+}
