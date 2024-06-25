@@ -7,10 +7,7 @@ module.exports = async (connectorData, inputData) => {
 		logger.trace(`MongoDB FindOne Node: Input - ${JSON.stringify(inputData)}`);
 		if (!inputData.collection) {
 			logger.error(`MongoDB FindOne Node: Collection name is required`);
-			throw {
-				"code": "MONGODB_FIND_ONE_ERROR",
-				"message": "Collection name is required"
-			}
+			throw new Error("Collection name is required")
 		}
 		const cursor = connectorData.db.collection(inputData.collection).findOne(inputData.filter);
 		if (!_.isEmpty(inputData.project)) {
