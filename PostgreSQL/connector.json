@@ -1,0 +1,44 @@
+{
+	"name": "PostgreSQL",
+	"fileName": "connector.js",
+	"fields": [
+		{
+			"type": "String",
+			"key": "host",
+			"label": "Host",
+			"htmlInputType": "text",
+			"encrypted": false,
+			"required": true
+		},
+		{
+			"type": "String",
+			"key": "port",
+			"label": "Port",
+			"htmlInputType": "text",
+			"encrypted": false,
+			"required": true
+		},
+		{
+			"type": "String",
+			"key": "user",
+			"label": "User",
+			"htmlInputType": "text",
+			"encrypted": false,
+			"required": true
+		},
+		{
+			"type": "String",
+			"key": "password",
+			"label": "Password",
+			"htmlInputType": "text",
+			"required": true
+		},
+		{
+			"type": "String",
+			"key": "database",
+			"label": "Database",
+			"htmlInputType": "text",
+			"required": true
+		}
+	]
+}
