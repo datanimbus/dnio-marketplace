@@ -1,0 +1,34 @@
+{
+	"name": "PostgreSQL Prepare Statement",
+	"fileName": "node.prepare.js",
+	"inputSchema": [
+		{
+			"key": "query",
+			"type": "String"
+		},
+		{
+			"key": "values",
+			"type": "Array"
+		}
+	],
+	"outputSchema": [
+		{
+			"key": "results",
+			"type": "Object"
+		}
+	],
+	"errorSchema": [
+		{
+			"key": "code",
+			"type": "Number"
+		},
+		{
+			"key": "message",
+			"type": "String"
+		},
+		{
+			"key": "stackTrace",
+			"type": "String"
+		}
+	]
+}
