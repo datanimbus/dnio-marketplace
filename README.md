@@ -50,10 +50,10 @@ Legend
   * README.md - Used to describe what the contents of the folder are for.
   * metadata.json - Information on where to find the connector and node information. [File structure explained below](#metadatajson).
   * test.js - Test file that can test the contents of the file.
-  * connector.js - Optional. If a connector is required then this is where it should be implemented.
-  * connector.json - Describes the connector. File structure explained below.
-  * node.xxxx.js - The implementation for a node.
-  * node.xxxx.json - Describes the node. File structure explained below.
+  * connector.js - Optional. If a connector is required then this is where it should be implemented. [Link](#connectorjs).
+  * connector.json - Describes the connector. [File structure explained below](#connectorjson).
+  * node.xxxx.js - The implementation for a node. [Link](#nodexxxjs).
+  * node.xxxx.json - Describes the node. [File structure explained below](#nodexxxxjson).
 
 ## metadata.json
 
@@ -61,9 +61,9 @@ This file must have the following structure,
 
 ```json
 {
-	"connector": // connector json file. This is connector.json file where moe information regarding the connector can be found,
+	"connector": "// connector json file. This is connector.json file where moe information regarding the connector can be found,"
 	"nodes": [
-		// List of node json files
+		"// List of node json files"
 	]
 }
 ```
@@ -87,11 +87,11 @@ File structure,
 
 ```json
 {
-	"name": //Name of the connector as it should appear on marketplace,
+	"name": "//Name of the connector as it should appear on marketplace,"
 	"fileName": "connector.js",
 	"fields": [
-		// fields are the input data for connector. This explains the each input field and their type.
-		// Use the marketplace UI to define this and copy the values here.
+		"// fields are the input data for connector. This explains the each input field and their type."
+		"// Use the marketplace UI to define this and copy the values here."
 	]
 }
 ```
