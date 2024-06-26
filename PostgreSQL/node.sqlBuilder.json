@@ -1,6 +1,6 @@
 {
-	"name": "PostgreSQL Prepare Statement",
-	"fileName": "node.prepare.js",
+	"name": "PostgreSQL SQL Builder Statement",
+	"fileName": "node.sqlBuilder.js",
 	"inputSchema": [
 		{
 			"key": "query",
