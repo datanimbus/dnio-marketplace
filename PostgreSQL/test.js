@@ -1,6 +1,6 @@
 const { getLogger } = require('log4js');
 
-let logger = getLogger(`[MySQL]`);
+let logger = getLogger(`[PostgreSQL]`);
 logger.level = "TRACE"
 global.logger = logger;
 
