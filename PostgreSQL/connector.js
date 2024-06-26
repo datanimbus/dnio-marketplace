@@ -21,7 +21,7 @@ module.exports = async (connectorData) => {
 	} catch (error) {
 		logger.error(`PostgreSQL Connector: Error connecting to PostgreSQL: ${error}`);
 		throw {
-			"code": "PostgreSQL_CONNECTOR_ERROR",
+			"code": "POSTGRESQL_CONNECTOR_ERROR",
 			"message": "Error connecting to PostgreSQL",
 			"stackTrace": error
 		}
