@@ -4,9 +4,11 @@ module.exports = async (connectorData, inputData) => {
 	logger.trace("PostgreSQL SQL Builder Node: Invoked!");
 	try {
 		logger.trace(`PostgreSQL SQL Builder Node: input - ${JSON.stringify(inputData)}`);
-		const query = inputData.query ?? '';
+		if (!inputData.query) {
+			throw { message: "SQL Query is required." };
+		}
 		const values = inputData.values ?? [];
-		const result = await connectorData.pgCon.query(query, values);
+		const result = await connectorData.pgCon.query(inputData.query, values);
 		logger.trace(`PostgreSQL SQL Builder Node: SQL Builder successful`);
 		logger.trace(`PostgreSQL SQL Builder Node: SQL Builder response : ${JSON.stringify(result)}`);
 		return { rowCount: result.rowCount, rows: result.rows };
