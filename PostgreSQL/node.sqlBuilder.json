@@ -13,14 +13,19 @@
 	],
 	"outputSchema": [
 		{
-			"key": "results",
-			"type": "Object"
+			"key": "rowCount",
+			"type": "Number"
+		},
+		{
+			"key": "rows",
+			"type": "Array",
+			"subType": "Object"
 		}
 	],
 	"errorSchema": [
 		{
 			"key": "code",
-			"type": "Number"
+			"type": "String"
 		},
 		{
 			"key": "message",
