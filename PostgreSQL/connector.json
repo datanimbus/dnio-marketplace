@@ -31,14 +31,16 @@
 			"key": "password",
 			"label": "Password",
 			"htmlInputType": "text",
-			"required": true
+			"required": true,
+			"encrypted": true
 		},
 		{
 			"type": "String",
 			"key": "database",
 			"label": "Database",
 			"htmlInputType": "text",
-			"required": true
+			"required": true,
+			"encrypted": false
 		}
 	]
 }
