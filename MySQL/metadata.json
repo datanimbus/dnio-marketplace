@@ -1,6 +1,6 @@
 {
 	"connector": "connector.json",
 	"nodes": [
-		"node.prepare.json"
+		"node.sqlBuilder.json"
 	]
 }
