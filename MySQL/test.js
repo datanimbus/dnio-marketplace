@@ -8,7 +8,7 @@ global.logger = logger;
 	let connectorData = {
 		user: 'root',
 		host: '0.0.0.0',
-		database: 'test_db',
+		database: 'dnio-marketpalce',
 		password: '123',
 		port: '3306',
 	};
@@ -20,7 +20,7 @@ global.logger = logger;
 		query: 'SELECT 1 + 1 AS solution',
 		values: [],
 	};
-	const connectionResults = await require('./node.prepare')(connectorData, inputData);
+	const connectionResults = await require('./node.sqlBuilder')(connectorData, inputData);
 	logger.info(`Test Connection result : ${JSON.stringify(connectionResults)}`);
 
 	// TEST CREATE A RECORD
@@ -28,15 +28,15 @@ global.logger = logger;
 		query: 'INSERT INTO my_table (name) VALUES (?)',
 		values: ['John Doe'],
 	};
-	const createResults = await require('./node.prepare')(connectorData, inputData);
+	const createResults = await require('./node.sqlBuilder')(connectorData, inputData);
 	logger.info(`Create a record result : ${JSON.stringify(createResults)}`);
 
 	// TEST READ A RECORD
 	inputData = {
 		query: 'SELECT * FROM my_table WHERE name = ?',
-		values: ['John Doe'],
+		values: ['Jane Doe'],
 	};
-	const readResults = await require('./node.prepare')(connectorData, inputData);
+	const readResults = await require('./node.sqlBuilder')(connectorData, inputData);
 	logger.info(`Read a record result : ${JSON.stringify(readResults)}`);
 
 	// TEST UPDATE A RECORD
@@ -44,14 +44,14 @@ global.logger = logger;
 		query: 'UPDATE my_table SET name = ? WHERE name = ?',
 		values: ['Jane Doe', 'John Doe'],
 	};
-	const updateResults = await require('./node.prepare')(connectorData, inputData);
+	const updateResults = await require('./node.sqlBuilder')(connectorData, inputData);
 	logger.info(`Update a record result : ${JSON.stringify(updateResults)}`);
 	
-	// TEST DELETE A RECORD
+	// // TEST DELETE A RECORD
 	inputData = {
 		query: 'DELETE FROM my_table WHERE id = ?',
 		values: ['1'],
 	};
-	const deleteResults = await require('./node.prepare')(connectorData, inputData);
+	const deleteResults = await require('./node.sqlBuilder')(connectorData, inputData);
 	logger.info(`Delete a record result : ${JSON.stringify(deleteResults)}`);
 })()
