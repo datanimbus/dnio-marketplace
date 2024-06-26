@@ -3,17 +3,17 @@ let logger = global.logger;
 
 module.exports = async (connectorData, inputData) => {
     logger.trace("MongoDB Count Node: Invoked!");
-
     try {
         logger.trace(`MongoDB Count Node: Input - ${JSON.stringify(inputData)}`);
 
-        if (!connectorData.db || !inputData.collection) {
-            throw new Error("Database connection or collection name is missing");
+        if (!inputData.collection) {
+            logger.error('MongoDB Count Node: Collection name is missing');
+            throw new Error('Collection name is missing');
         }
 
         const count = await connectorData.db.collection(inputData.collection).countDocuments(inputData.filter || {});
         logger.trace(`MongoDB Count Node: Count result - ${count}`);
-        return { count };
+        return count ;
     } catch (error) {
         logger.error(`MongoDB Count Node: Error counting documents from MongoDB: ${error}`);
         throw {

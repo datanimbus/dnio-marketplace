@@ -6,8 +6,9 @@ module.exports = async (connectorData, inputData) => {
     try {
         logger.trace(`MongoDB Find Node: Input - ${JSON.stringify(inputData)}`);
 
-        if (!connectorData.db || !inputData.collection) {
-            throw new Error("Database connection or collection name is missing");
+        if (!inputData.collection) {
+            logger.error('MongoDB Find Node: Collection name is missing');
+            throw new Error('Collection name is missing');
         }
 
         const cursor = connectorData.db.collection(inputData.collection).find(inputData.filter || {});
@@ -26,7 +27,7 @@ module.exports = async (connectorData, inputData) => {
         }
 
         const result = await cursor.toArray();
-        logger.trace(`MongoDB Find Node: Find response : ${JSON.stringify(result)}`);
+        logger.trace(`MongoDB Find Node: Find response - ${JSON.stringify(result)}`);
         return result;
     } catch (error) {
         logger.error(`MongoDB Find Node: Error finding documents from MongoDB: ${error}`);
