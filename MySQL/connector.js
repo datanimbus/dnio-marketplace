@@ -20,7 +20,7 @@ module.exports = async (connectorData) => {
 	} catch (error) {
 		logger.error(`MySQL Connector: Error connecting to MySQL: ${error}`);
 		throw {
-			"code": "MySQL_CONNECTOR_ERROR",
+			"code": "MYSQL_CONNECTOR_ERROR",
 			"message": "Error connecting to MySQL",
 			"stackTrace": error
 		}
