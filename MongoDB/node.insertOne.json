@@ -20,7 +20,7 @@
 	"errorSchema": [
 		{
 			"key": "code",
-			"type": "Number"
+			"type": "String"
 		},
 		{
 			"key": "message",
