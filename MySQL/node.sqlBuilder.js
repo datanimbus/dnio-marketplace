@@ -5,11 +5,12 @@ module.exports = async (connectorData, inputData) => {
 	try {
 		logger.trace(`MySQL SQL Builder: input - ${JSON.stringify(inputData)}`);
 		if (!inputData.query) {
+			logger.error(`MySQL SQL Builder: SQL Query is required.`);
 			throw { message: "SQL Query is required." };
 		}
 		const values = inputData.values ?? [];
 
-		const [result, _] = await connectorData.MySQLCon.execute(inputData.query, values);
+		const [result, _] = await connectorData.client.execute(inputData.query, values);
 		logger.trace(`MySQL SQL Builder: SQL Builder successful`);
 		logger.trace(`MySQL SQL Builder: SQL Builder response : ${JSON.stringify(result)}`);
 		return result;	
