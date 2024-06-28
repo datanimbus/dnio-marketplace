@@ -17,7 +17,7 @@ module.exports = async (connectorData) => {
 		await client.connect()
 		logger.info("PostgreSQL Connector: Connected to PostgreSQL");
 		logger.info(`PostgreSQL Connector: DB set to ${connectorData.database}`)
-		return { pgCon: client };
+		return { client: client, db: connectorData.database };
 	} catch (error) {
 		logger.error(`PostgreSQL Connector: Error connecting to PostgreSQL: ${error}`);
 		throw {
