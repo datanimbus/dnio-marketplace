@@ -16,7 +16,7 @@ module.exports = async (connectorData) => {
 		});
 		logger.info("MySQL Connector: Connected to MySQL");
 		logger.info(`MySQL Connector: DB set to ${connectorData.database}`);
-		return { MySQLCon: connection };
+		return { client: connection, db: connectorData.database };
 	} catch (error) {
 		logger.error(`MySQL Connector: Error connecting to MySQL: ${error}`);
 		throw {
