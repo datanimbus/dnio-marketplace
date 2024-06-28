@@ -1,26 +1,26 @@
 {
-	"name": "MongoDB Find One",
-	"fileName": "node.findOne.js",
+	"name": "MongoDB Aggregate",
+	"fileName": "node.aggregate.js",
 	"inputSchema": [
-		{
-			"key": "query",
-			"type": "Schema"
-		},
 		{
 			"key": "collection",
 			"type": "String"
+		},
+		{
+			"key": "pipeline",
+			"type": "Array<Schema>"
 		}
 	],
 	"outputSchema": [
 		{
-			"key": "document",
-			"type": "Schema"
+			"key": "result",
+			"type": "Array<Schema>"
 		}
 	],
 	"errorSchema": [
 		{
 			"key": "code",
-			"type": "Number"
+			"type": "String"
 		},
 		{
 			"key": "message",

@@ -1,8 +1,15 @@
 {
 	"connector": "connector.json",
 	"nodes": [
+		"node.aggregate.json",
+		"node.count.json",
+		"node.deleteMany.json",
+		"node.deleteOne.json",
+		"node.find.json",
 		"node.findOne.json",
 		"node.insertMany.json",
-		"node.insertOne.json"
+		"node.insertOne.json",
+		"node.updateMany.json",
+		"node.updateOne.json"
 	]
 }
