@@ -7,9 +7,8 @@ module.exports = async (connectorData, inputData) => {
         logger.trace(`MongoDB Aggregate Node: Input - ${JSON.stringify(inputData)}`);
 
         if (_.isEmpty(inputData.pipeline)) {
-            throw new Error('Pipeline is empty');
-            logger.error('MongoDB Aggregate Node: Pipeline is empty');
-
+        logger.error('MongoDB Aggregate Node: Pipeline is empty');
+        throw new Error('Pipeline is empty');
         }
 
         const result = await connectorData.db.collection(inputData.collection).aggregate(inputData.pipeline).toArray();
