@@ -10,10 +10,10 @@ module.exports = async (connectorData, inputData) => {
 		}
 		const values = inputData.values ?? [];
 
-		const [result, _] = await connectorData.client.execute(inputData.query, values);
+		const [result] = await connectorData.client.execute(inputData.query, values);
 		logger.trace(`MySQL SQL Builder: SQL Builder successful`);
 		logger.trace(`MySQL SQL Builder: SQL Builder response : ${JSON.stringify(result)}`);
-		return result;	
+		return result;
 	} catch (error) {
 		logger.error(`MySQL SQL Builder: Error executing SQL Builder query in MySQL: ${error}`);
 		throw {
