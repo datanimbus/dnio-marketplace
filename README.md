@@ -25,7 +25,7 @@ Legend
 | Type | Name | Connector | Nodes | Link |
 |--|--|--|--|--|
 | DB | MongoDB | ✅ | 🔶 | [link](./MongoDB/README.md) | 
-| DB | MySQL | 🔶 | 🔶 | [link](./MySQL/README.md) | 
+| DB | MySQL | ✅ | ✅ | [link](./MySQL/README.md) | 
 | DB | PostgreSQL | ✅ | ✅ | [link](./PostgreSQL/README.md) | 
 | DB | MSSQL | 🔴 | 🔴 | [link](./mongodb/README.md) | 
 | DB | DocumentDB | 🔴 | 🔴 | [link](./mongodb/README.md) | 
