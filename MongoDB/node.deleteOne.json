@@ -1,26 +1,26 @@
 {
-	"name": "MongoDB Find One",
-	"fileName": "node.findOne.js",
+	"name": "MongoDB Delete One",
+	"fileName": "node.deleteOne.js",
 	"inputSchema": [
-		{
-			"key": "query",
-			"type": "Schema"
-		},
 		{
 			"key": "collection",
 			"type": "String"
+		},
+		{
+			"key": "filter",
+			"type": "Schema"
 		}
 	],
 	"outputSchema": [
 		{
-			"key": "document",
-			"type": "Schema"
+			"key": "deletedCount",
+			"type": "Number"
 		}
 	],
 	"errorSchema": [
 		{
 			"key": "code",
-			"type": "Number"
+			"type": "String"
 		},
 		{
 			"key": "message",
