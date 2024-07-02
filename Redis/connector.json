@@ -1,0 +1,14 @@
+{
+	"name": "Redis",
+	"fileName": "connector.js",
+	"fields": [
+		{
+			"type": "String",
+			"key": "connectionString",
+			"label": "Connection String",
+			"htmlInputType": "textarea",
+			"encrypted": false,
+			"required": true
+		}
+	]
+}
