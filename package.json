@@ -10,10 +10,11 @@
   "author": "",
   "license": "AGPL2.0",
   "dependencies": {
+    "ioredis": "^5.4.1",
     "lodash": "^4.17.21",
     "log4js": "^6.9.1",
     "mongodb": "^6.7.0",
-    "mysql2": "^3.10.1"
+    "mysql2": "^3.10.1",
     "pg": "^8.12.0"
   }
 }
