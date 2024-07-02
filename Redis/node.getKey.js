@@ -10,7 +10,7 @@ module.exports = async (connectorData, inputData) => {
     } catch (error) {
         logger.error(`Redis Get Value Node: Error getting value in Redis: ${error}`);
         throw {
-            "code": "REDIS_GET_VALUE_ERROR",
+            "code": "REDIS_GET_KEY_ERROR",
             "message": "Error getting value in Redis",
             "stackTrace": error
         };

@@ -12,7 +12,7 @@ module.exports = async (connectorData, inputData) => {
     } catch (error) {
         logger.error(`Redis Set Value Node: Error setting value in Redis: ${error}`);
         throw {
-            "code": "REDIS_SET_VALUE_ERROR",
+            "code": "REDIS_SET_KEY_ERROR",
             "message": "Error setting value in Redis",
             "stackTrace": error
         };

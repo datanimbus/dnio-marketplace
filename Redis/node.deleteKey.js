@@ -9,7 +9,7 @@ module.exports = async (connectorData, inputData) => {
     } catch (error) {
         logger.error(`Redis Delete Value Node: Error deleting key in Redis: ${error}`);
         throw {
-            "code": "REDIS_DELETE_VALUE_ERROR",
+            "code": "REDIS_DELETE_KEY_ERROR",
             "message": "Error deleting key in Redis",
             "stackTrace": error
         };
