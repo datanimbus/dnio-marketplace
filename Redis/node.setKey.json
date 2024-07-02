@@ -1,0 +1,33 @@
+{
+	"name": "Redis Set Key",
+	"fileName": "node.setKey.js",
+	"inputSchema": [
+		{
+			"key": "key",
+			"type": "String"
+		},
+		{
+			"key": "value",
+			"type": "String"
+		},
+		{
+			"key": "expiry",
+			"type": "Number"
+		}
+	],
+	"outputSchema": [],
+	"errorSchema": [
+		{
+			"key": "code",
+			"type": "String"
+		},
+		{
+			"key": "message",
+			"type": "String"
+		},
+		{
+			"key": "stackTrace",
+			"type": "String"
+		}
+	]
+}
