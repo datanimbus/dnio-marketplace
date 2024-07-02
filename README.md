@@ -31,7 +31,7 @@ Legend
 | DB | DocumentDB | 🔴 | 🔴 | [link](./mongodb/README.md) | 
 | DB | CosmosDB | 🔴 | 🔴 | [link](./mongodb/README.md) | 
 | DB | OracleDB | 🔴 | 🔴 | [link](./mongodb/README.md) | 
-| DB | Redis | 🔴 | 🔴 | [link](./mongodb/README.md) | 
+| DB | Redis | 🔶 | 🔶 | [link](./Redis/README.md) | 
 | Queues | Apache Kafka | 🔴 | 🔴 | [link](./mongodb/README.md) | 
 | Queues | Active MQ | 🔴 | 🔴 | [link](./mongodb/README.md) | 
 | Queues | NATS | 🔴 | 🔴 | [link](./mongodb/README.md) | 
