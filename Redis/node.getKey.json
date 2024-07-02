@@ -1,0 +1,41 @@
+{
+	"name": "Redis Get Key",
+	"fileName": "node.getKey.js",
+	"inputSchema": [
+		{
+			"key": "key",
+			"type": "String"
+		}
+	],
+	"outputSchema": [
+		{
+			"type": "object",
+			"properties": {
+				"anyField": {
+					"type": [
+						"string",
+						"integer",
+						"object",
+						"array",
+						"boolean",
+						"null"
+					]
+				}
+			}
+		}
+	],
+	"errorSchema": [
+		{
+			"key": "code",
+			"type": "String"
+		},
+		{
+			"key": "message",
+			"type": "String"
+		},
+		{
+			"key": "stackTrace",
+			"type": "String"
+		}
+	]
+}
