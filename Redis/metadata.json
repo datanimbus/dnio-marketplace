@@ -1,0 +1,8 @@
+{
+	"connector": "connector.json",
+	"nodes": [
+		"node.setKey.json",
+		"node.getKey.json",
+		"node.deleteKey.json"
+	]
+}
