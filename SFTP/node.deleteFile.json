@@ -1,0 +1,30 @@
+{
+	"name": "SFTP Delete File",
+	"fileName": "node.deleteFile.js",
+	"inputSchema": [
+		{
+			"key": "filePath",
+			"type": "String"
+		}
+	],
+	"outputSchema": [
+		{
+			"key": "result",
+			"type": "String"
+		}
+	],
+	"errorSchema": [
+		{
+			"key": "code",
+			"type": "String"
+		},
+		{
+			"key": "message",
+			"type": "String"
+		},
+		{
+			"key": "stackTrace",
+			"type": "String"
+		}
+	]
+}
