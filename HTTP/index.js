@@ -1,68 +1,40 @@
-import got from 'got';
 import express from 'express';
-import fs from 'fs';
-import { pipeline } from 'stream';
-import { promisify } from 'util';
 
 const app = express();
-const pipelineAsync = promisify(pipeline);
+const PORT = 4000;
 
-app.use(express.json()); 
+app.use(express.json());
 
-app.listen(4000, () => {
-  console.log('Server is running on port 4000');
+// Dummy data
+let data = [{ id: 1, name: 'John Doe' }];
+
+// GET method
+app.get('/find', (req, res) => {
+  res.json(data);
 });
 
-app.get('/', async (req, res) => {
-  try {
-    await pipelineAsync(
-      got.stream('https://www.google.com'),
-      fs.createWriteStream('index.html')
-    );
-    res.send('File saved successfully!');
-  } catch (error) {
-    console.error('GET / error:', error);
-    res.status(500).send('Internal Server Error');
-  }
+// POST method
+app.post('/add', (req, res) => {
+  const newItem = req.body;
+  data.push(newItem);
+  res.status(201).json(newItem);
 });
 
-app.post('/post', async (req, res) => {
-  try {
-    console.log('POST request body:', req.body);
-    const response = await got.post('http://localhost:3000/insert', {
-      json: req.body,
-      responseType: 'json'
-    });
-    console.log('POST response:', response.body);
-    res.json(response.body);
-  } catch (error) {
-    console.error('POST /post error:', error);
-    res.status(500).send('Internal Server Error');
-  }
+// PUT method
+app.put('/update/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const updatedItem = req.body;
+  data = data.map(item => (item.id === id ? updatedItem : item));
+  res.json(updatedItem);
 });
 
-app.put('/put/:id', async (req, res) => {
-  try {
-    console.log('Received PUT request with body:', req.body);
-    const response = await got.put(`http://localhost:3000/put/${req.params.id}`, {
-      json: req.body,
-      responseType: 'json'
-    });
-    console.log('PUT response:', response.body);
-    res.json(response.body);
-  } catch (error) {
-    console.error('PUT /put/:id error:', error);
-    res.status(500).send('Internal Server Error');
-  }
+// DELETE method
+app.delete('/delete/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  data = data.filter(item => item.id !== id);
+  res.status(204).send("Successfully deleted item!");
 });
 
-app.delete('/delete/:id', async (req, res) => {
-  try {
-    console.log('Received DELETE request for ID:', req.params.id);
-    const response = await got.delete(`http://localhost:3000/delete/${req.params.id}`);
-    res.json(response.body);
-  } catch (error) {
-    console.error('DELETE /delete/:id error:', error);
-    res.status(500).send('Internal Server Error');
-  }
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
