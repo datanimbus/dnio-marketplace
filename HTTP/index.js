@@ -1,40 +1,32 @@
-import express from 'express';
+async function makeRequest(inputData, connectorData) {
+  const { default: got } = await import('got');
 
-const app = express();
-const PORT = 4000;
+  const gotConfig = {
+      method: inputData.method,
+      url: `${connectorData.protocol}://${connectorData.host}:${connectorData.port}${inputData.path}`,
+      searchParams: inputData.query,
+      headers: inputData.headers,
+      timeout: inputData.timeout || 60000,
+      responseType: 'buffer',
+      throwHttpErrors: inputData.throwErrorOn4xx,
+  };
 
-app.use(express.json());
+  if (inputData.data) {
+      gotConfig.body = Buffer.from(inputData.data);
+  }
 
-// Dummy data
-let data = [{ id: 1, name: 'John Doe' }];
+  console.info(`Making HTTP [${gotConfig.method}] Request at [${gotConfig.url}]`);
+  console.trace(JSON.stringify(gotConfig));
 
-// GET method
-app.get('/find', (req, res) => {
-  res.json(data);
-});
+  try {
+      const response = await got(gotConfig);
+      return response.body;
+  } catch (error) {
+      if (error.response) {
+          return error.response.body;
+      }
+      throw error;
+  }
+}
 
-// POST method
-app.post('/add', (req, res) => {
-  const newItem = req.body;
-  data.push(newItem);
-  res.status(201).json(newItem);
-});
-
-// PUT method
-app.put('/update/:id', (req, res) => {
-  const id = parseInt(req.params.id);
-  const updatedItem = req.body;
-  data = data.map(item => (item.id === id ? updatedItem : item));
-  res.json(updatedItem);
-});
-
-// DELETE method
-app.delete('/delete/:id', (req, res) => {
-  const id = parseInt(req.params.id);
-  data = data.filter(item => item.id !== id);
-  res.status(204).send("Successfully deleted item!");
-});
-
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-});
+module.exports = makeRequest;
