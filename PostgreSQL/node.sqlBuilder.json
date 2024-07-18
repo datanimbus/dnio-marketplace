@@ -1,25 +1,25 @@
 {
-	"name": "MongoDB Insert Many",
-	"fileName": "node.insertMany.js",
+	"name": "PostgreSQL SQL Builder Statement",
+	"fileName": "node.sqlBuilder.js",
 	"inputSchema": [
 		{
-			"key": "data",
-			"type": "Schema"
+			"key": "query",
+			"type": "String"
 		},
 		{
-			"key": "collection",
-			"type": "String"
+			"key": "values",
+			"type": "Array"
 		}
 	],
 	"outputSchema": [
 		{
-			"key": "insertedCount",
+			"key": "rowCount",
 			"type": "Number"
 		},
 		{
-			"key": "insertedIds",
+			"key": "rows",
 			"type": "Array",
-			"subType": "String"
+			"subType": "Object"
 		}
 	],
 	"errorSchema": [

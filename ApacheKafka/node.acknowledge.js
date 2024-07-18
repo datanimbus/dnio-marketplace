@@ -1,20 +1,20 @@
 class Acknowledgment {
     constructor() {
-        this.pendingAcks = new Map();
+        this.acks = new Map();
     }
-  
-    addAck(messageId, ackCallback) {
-        this.pendingAcks.set(messageId, ackCallback);
+
+    addAck(messageId, ackFunction) {
+        this.acks.set(messageId, ackFunction);
     }
-  
+
     acknowledge(messageId) {
-        if (this.pendingAcks.has(messageId)) {
-            const ackCallback = this.pendingAcks.get(messageId);
-            ackCallback();
-            this.pendingAcks.delete(messageId);
+        if (this.acks.has(messageId)) {
+            this.acks.get(messageId)();
+            this.acks.delete(messageId);
+        } else {
+            console.error(`No acknowledgment found for message ID ${messageId}`);
         }
     }
-  }
-  
-  module.exports = Acknowledgment;
-  
+}
+
+module.exports = Acknowledgment;

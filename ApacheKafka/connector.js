@@ -1,7 +1,7 @@
-const Producer = require('./producer/producer');
-const Consumer = require('./consumer/consumer');
-const Acknowledgment = require('./acknowledge');
-const logger = global.logger || console; 
+const Producer = require('./node.producer');
+const Consumer = require('./node.consumer');
+const Acknowledgment = require('./node.acknowledge');
+const logger = global.logger || console;
 
 class KafkaConnector {
     constructor(kafkaHost, producerTopic, consumerTopic, groupId) {
