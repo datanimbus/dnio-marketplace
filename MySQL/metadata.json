@@ -1,0 +1,6 @@
+{
+	"connector": "connector.json",
+	"nodes": [
+		"node.sqlBuilder.json"
+	]
+}
