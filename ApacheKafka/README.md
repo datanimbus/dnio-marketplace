@@ -4,8 +4,8 @@ Apache Kafka marketplace status of the following
 
 | Type | File | Status |
 |--|--|--|
-| Connector | Connector | ✅ |
-| Producer | Producer | ✅ |
-| Consumer | Consumer | ✅ |
-| Acknowledge | Acknowledge | ✅ |
+| Connector | [Connector.js](./node.connector.js) | ✅ |
+| Producer | [node.producer.js](./node.producer.js) | ✅ |
+| Consumer | [node.consumer.js](./node.consumer.js) | ✅ |
+| Acknowledge | [node.acknowledge.js](./node.acknowledge.js) | ✅ |
 
