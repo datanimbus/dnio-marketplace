@@ -1,8 +1,0 @@
-{
-    "connector": "connector.json",
-    "nodes": [
-            "node.producer.json",
-            "node.consumer.json",
-            "node.acknowledge.json"
-    ]
-}
