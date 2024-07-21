@@ -21,9 +21,10 @@ class Consumer {
             logger.trace('Consumer: Message received:', message);
             callback({
                 topic: message.topic,
-                partition: message.partition,
+                partition: message.partition, //based on partitioning requirements
                 offset: message.offset,
                 value: message.value,
+                key: message.key
             });
         });
     }
