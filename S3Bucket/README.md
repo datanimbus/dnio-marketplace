@@ -10,4 +10,7 @@ S3 Bucket marketplace status of the following:
 | UpdateObject | [node.updateObject.js](./node.updateObject.js) | ✅ |
 | DeleteObject | [node.deleteObject.js](./node.deleteObject.js) | ✅ |
 
+---
 
+### Configurations:
+Needs a .env file with AWS Access Key, AWS Secret Access Key, AWS Region and S3 Bucket Name. 
