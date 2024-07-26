@@ -1,0 +1,55 @@
+{
+	"name": "S3Bucket UpdateObject",
+	"fileName": "node.updateObject.js",
+	"inputSchema": [
+		{
+			"key": "bucketName",
+			"type": "String",
+			"required": true
+		},
+		{
+			"key": "key",
+			"type": "String",
+			"required": true
+		},
+		{
+			"key": "newContent",
+			"type": "String",
+			"required": true
+		},
+		{
+			"key": "metadata",
+			"type": "Object",
+			"required": false
+		},
+		{
+			"key": "contentType",
+			"type": "String",
+			"required": false
+		}
+	],
+	"outputSchema": [
+		{
+			"key": "ETag",
+			"type": "String"
+		},
+		{
+			"key": "VersionId",
+			"type": "String"
+		}
+	],
+	"errorSchema": [
+		{
+			"key": "code",
+			"type": "String"
+		},
+		{
+			"key": "message",
+			"type": "String"
+		},
+		{
+			"key": "stackTrace",
+			"type": "String"
+		}
+	]
+}
