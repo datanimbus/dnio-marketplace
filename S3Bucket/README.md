@@ -12,5 +12,5 @@ S3 Bucket marketplace status of the following:
 
 ---
 
-### Configurations:
+### Add file:
 Needs a .env file with AWS Access Key, AWS Secret Access Key, AWS Region and S3 Bucket Name. 
