@@ -1,9 +1,0 @@
-{
-	"connector": "connector.json",
-	"nodes": [
-		"node.putObject.json",
-		"node.getObject.json",
-		"node.updateObject.json",
-		"node.deleteObject.json"
-	]
-}
