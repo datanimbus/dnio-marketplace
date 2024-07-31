@@ -4,6 +4,7 @@ module.exports = async (connectorData, inputData) => {
 	logger.trace("SFTP Delete File Node: Invoked!");
 	try {
 		logger.trace(`SFTP Delete File Node: input - ${JSON.stringify(inputData)}`);
+		logger.info(`SFTP Delete File Node: Deleting file ${inputData.filePath}`);
 		const result = await connectorData.client.delete(inputData.filePath);
 		logger.trace(`SFTP Delete Files Node: Delete File successful`);
 		logger.trace(`SFTP Delete Files Node: Delete File response : ${JSON.stringify(result)}`);

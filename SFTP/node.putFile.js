@@ -4,6 +4,7 @@ module.exports = async (connectorData, inputData) => {
 	logger.trace("SFTP Put File Node: Invoked!");
 	try {
 		logger.trace(`SFTP Put File Node: input - ${JSON.stringify(inputData)}`);
+		logger.info(`SFTP Put File Node: Putting file ${inputData.localFile} to ${inputData.remoteFile}`);
 		const result = await connectorData.client.put(inputData.localFile, inputData.remoteFile);
 		logger.trace(`SFTP Put Files Node: Put File successful`);
 		logger.trace(`SFTP Put Files Node: Put File response : ${JSON.stringify(result)}`);
