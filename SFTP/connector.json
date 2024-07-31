@@ -1,0 +1,54 @@
+{
+	"name": "SFTP",
+	"fileName": "connector.js",
+	"fields": [
+		{
+			"type": "String",
+			"key": "host",
+			"label": "Host",
+			"htmlInputType": "text",
+			"encrypted": false,
+			"required": true
+		},
+		{
+			"type": "Integer",
+			"key": "port",
+			"label": "Port",
+			"htmlInputType": "text",
+			"encrypted": false,
+			"required": true
+		},
+		{
+			"type": "String",
+			"key": "user",
+			"label": "User",
+			"htmlInputType": "text",
+			"encrypted": false,
+			"required": true
+		},
+		{
+			"type": "String",
+			"key": "password",
+			"label": "Password",
+			"htmlInputType": "text",
+			"required": true,
+			"encrypted": true
+		},
+		{
+			"type": "String",
+			"key": "privateKey",
+			"label": "Private Key",
+			"htmlInputType": "text",
+			"required": false,
+			"encrypted": true
+		},
+		{
+			"type": "String",
+			"key": "passphrase",
+			"label": "Passphrase",
+			"htmlInputType": "text",
+			"required": false,
+			"encrypted": true
+		}
+	]
+}

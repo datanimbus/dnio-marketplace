@@ -1,0 +1,38 @@
+{
+	"name": "SFTP List Files",
+	"fileName": "node.listFiles.js",
+	"inputSchema": [
+		{
+			"key": "path",
+			"type": "String"
+		}
+	],
+	"outputSchema": [
+		{
+			"key": "type",
+			"type": "String"
+		},
+		{
+			"key": "name",
+			"type": "String"
+		},
+		{
+			"key": "size",
+			"type": "Number"
+		}
+	],
+	"errorSchema": [
+		{
+			"key": "code",
+			"type": "String"
+		},
+		{
+			"key": "message",
+			"type": "String"
+		},
+		{
+			"key": "stackTrace",
+			"type": "String"
+		}
+	]
+}

@@ -35,7 +35,7 @@ Legend
 | Queues | Apache Kafka | 🔴 | 🔴 | [link](./mongodb/README.md) | 
 | Queues | Active MQ | 🔴 | 🔴 | [link](./mongodb/README.md) | 
 | Queues | NATS | 🔴 | 🔴 | [link](./mongodb/README.md) | 
-| File | SFTP | 🔴 | 🔴 | [link](./mongodb/README.md) | 
+| File | SFTP | 🔶 | 🔶 | [link](./SFTP/README.md) | 
 | File | MongoDB GridFS | 🔴 | 🔴 | [link](./mongodb/README.md) | 
 | File | Amazon S3 | 🔴 | 🔴 | [link](./mongodb/README.md) | 
 | File | Azure Blob Storage | 🔴 | 🔴 | [link](./mongodb/README.md) | 

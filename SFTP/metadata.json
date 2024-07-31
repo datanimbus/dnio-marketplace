@@ -1,0 +1,10 @@
+{
+	"connector": "connector.json",
+	"nodes": [
+		"node.listFiles.json",
+		"node.getFile.json",
+		"node.putFile.json",
+		"node.deleteFile.json",
+		"node.renameFile.json"
+	]
+}

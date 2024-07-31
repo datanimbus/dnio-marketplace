@@ -1,0 +1,34 @@
+{
+	"name": "SFTP Put File",
+	"fileName": "node.putFile.js",
+	"inputSchema": [
+		{
+			"key": "localFile",
+			"type": "String"
+		},
+		{
+			"key": "remoteFile",
+			"type": "String"
+		}
+	],
+	"outputSchema": [
+		{
+			"key": "result",
+			"type": "String"
+		}
+	],
+	"errorSchema": [
+		{
+			"key": "code",
+			"type": "String"
+		},
+		{
+			"key": "message",
+			"type": "String"
+		},
+		{
+			"key": "stackTrace",
+			"type": "String"
+		}
+	]
+}

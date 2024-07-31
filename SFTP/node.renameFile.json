@@ -1,0 +1,34 @@
+{
+	"name": "SFTP Rename File",
+	"fileName": "node.renameFile.js",
+	"inputSchema": [
+		{
+			"key": "sourceFilePath",
+			"type": "String"
+		},
+		{
+			"key": "targetFilePath",
+			"type": "String"
+		}
+	],
+	"outputSchema": [
+		{
+			"key": "result",
+			"type": "String"
+		}
+	],
+	"errorSchema": [
+		{
+			"key": "code",
+			"type": "String"
+		},
+		{
+			"key": "message",
+			"type": "String"
+		},
+		{
+			"key": "stackTrace",
+			"type": "String"
+		}
+	]
+}
