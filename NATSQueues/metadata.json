@@ -1,0 +1,8 @@
+
+{
+    "connector": "connector.json",
+    "nodes": [
+        "publisher.json",
+        "subscriber.json"
+    ]
+}

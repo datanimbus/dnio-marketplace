@@ -1,0 +1,64 @@
+{
+    "name": "NATS Subscriber",
+    "fileName": "node.subscriber.js",
+    "inputSchema": [
+        {
+            "key": "subject",
+            "type": "String",
+            "label": "Subject",
+            "required": true
+        },
+        {
+            "key": "queueGroup",
+            "type": "String",
+            "label": "Queue Group",
+            "required": true
+        },
+        {
+            "key": "subscriberId",
+            "type": "String",
+            "label": "Subscriber ID",
+            "required": true
+        }
+    ],
+    "outputSchema": [
+        {
+            "key": "status",
+            "type": "String",
+            "label": "Status",
+            "description": "The status of the subscribe operation (e.g., 'Subscribed' or 'Error')."
+        },
+        {
+            "key": "details",
+            "type": "String",
+            "label": "Details",
+            "description": "Additional details about the subscribe operation."
+        },
+        {
+            "key": "receivedMessage",
+            "type": "String",
+            "label": "Received Message",
+            "description": "The message received by the subscriber."
+        }
+    ],
+    "errorSchema": [
+        {
+            "key": "code",
+            "type": "String",
+            "label": "Error Code",
+            "description": "The error code if an error occurs during the subscribe operation."
+        },
+        {
+            "key": "message",
+            "type": "String",
+            "label": "Error Message",
+            "description": "A detailed message explaining the error."
+        },
+        {
+            "key": "stackTrace",
+            "type": "String",
+            "label": "Stack Trace",
+            "description": "The stack trace for debugging purposes."
+        }
+    ]
+}
